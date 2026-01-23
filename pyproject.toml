@@ -28,7 +28,7 @@ dependencies = [
   "torchaudio",
   "soundfile",
   "sox",
-  "onnxruntime",
+  #"onnxruntime",
   "einops",
 ]
 
