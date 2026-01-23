@@ -45,4 +45,4 @@ packages = ["voicestudio._qwen3_tts"]
 include-package-data = true
 
 [tool.setuptools.package-data]
-voicestudio._qwen3_tts = ["py.typed", "**/*.npz"]
+"voicestudio._qwen3_tts" = ["py.typed", "**/*.npz"]
