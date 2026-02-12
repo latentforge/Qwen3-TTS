@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "qwen-tts"
+name = "voicestudio-qwen3-tts"
 version = "0.1.1"
 description = "Qwen-TTS python package"
 readme = "README.md"
@@ -20,14 +20,15 @@ license = { text = "Apache-2.0" }
 authors = [{ name = "Alibaba Qwen Team" }]
 
 dependencies = [
-  "transformers==4.57.3",
-  "accelerate==1.12.0",
-  "gradio",
+  "transformers",
+  #"transformers=4.57.3",
+  #"accelerate==1.12.0",
+  #"gradio",
   "librosa",
   "torchaudio",
   "soundfile",
   "sox",
-  "onnxruntime",
+  #"onnxruntime",
   "einops",
 ]
 
@@ -36,11 +37,12 @@ Homepage = "https://github.com/Qwen/Qwen3-TTS"
 Repository = "https://github.com/Qwen/Qwen3-TTS"
 
 [project.scripts]
-qwen-tts-demo = "qwen_tts.cli.demo:main"
+voicestudio-qwen3-tts-demo = "voicestudio._qwen3_tts.cli.demo:main"
 
 [tool.setuptools]
-packages = { find = { where = ["."] , include = ["qwen_tts*"] } }
+package-dir = {"voicestudio._qwen3_tts" = "qwen_tts"}
+packages = ["voicestudio._qwen3_tts"]
 include-package-data = true
 
 [tool.setuptools.package-data]
-qwen_tts = ["py.typed", "**/*.npz"]
+"voicestudio._qwen3_tts" = ["py.typed", "**/*.npz"]
